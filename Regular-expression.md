@@ -14,7 +14,7 @@
 
 - '?': gây ra kết quả match với cả số lần lặp 0 và 1. Ví dụ: 'ab?' sẽ match với cả 'a' và 'ab'
 
-- '*?' , '+?','??': Match với nhiều text. Ví dụ
+- '*?' , '+?' , '??': Match với nhiều text. Ví dụ
     ```
        <.*> sẽ match với <h1>title</h1>. <.*?> sẽ chỉ match với <h1> và </h1>
        
