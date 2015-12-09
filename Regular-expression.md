@@ -197,3 +197,40 @@ tuong tu re.sub() nhung tra ve 1 tuple
 
 ###10. re.purge()
 clear cache
+
+
+Vi du 1: 
+
+<img src="https://www.evernote.com/shard/s637/res/d203ab54-c17d-4f8c-94d3-4d7488ed8dbf">
+- Dau tien ta can import thu vien re
+-  Tiep theo khai bao re_string1 day la mau de tim kiem. bat dau bang '{{' va ket thuc boi '}}'
+- 1 some_string chua cac chuoi co mau
+- lap cac chuoi trong 1 string su dung ham findall() se tim kiem tu nao trung voi mau
+
+
+Note: Su dung re_ob = re.recompile(pattern)
+                        re_ob.search(pattern) cho toc do thuc thi nhanh hon
+
+##Raw String and regular expression
+
+
+
+- Cac method thuong su dung: findall(), finditer(), match(), search()
+
+* findall
+
+findall() match cac tu bat dau bang 't' va ket thuc bang 'e' chi thi '.*?' se match tat ca cac ki tu ke ca khoang trang do vay 'ttt eee' cung match
+findall() tra ve list cua 1 tuple
+
+de loai bo khoang trang ta dung 
+
+
+finditer() khac voi findall() o ket qua tra ve la iterator
+
+- search() va match() tuong doi giong nhau. search() tim ko theo tuan tu. con match() tim theo tuan tu
+
+
+
+- Tham so pos va endpos: pos la gia tri index bat dau tim kiem mau tren string va endpos la gia tri index ket thuc tim kiem 
+
+
