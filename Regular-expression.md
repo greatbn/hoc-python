@@ -26,25 +26,25 @@
 
 - [] : sử dụng để biểu thị 1 tập của các kí tự. Trong 1 tập:
 
-+ các kí tự có thể được list. ví dụ [amk] sẽ match với 'a', 'm' hoặc 'k'
+       + các kí tự có thể được list. ví dụ [amk] sẽ match với 'a', 'm' hoặc 'k'
 
-+ Phạm vi của các kí tự có thể được biểu thị bằng cách đưa ra 2 kí tự và chia bằng '-'. Ví dụ [a-z] sẽ match với các kí tự thường. [0-5][0-9] sẽ chỉ match với số có 2 chữ số từ 00-59 và [0-9A-Fa-f] sẽ match với các kí hiệu mã hexa. 
+       + Phạm vi của các kí tự có thể được biểu thị bằng cách đưa ra 2 kí tự và chia bằng '-'. Ví dụ [a-z] sẽ match với các kí tự thường. [0-5][0-9] sẽ chỉ match với số có 2 chữ số từ 00-59 và [0-9A-Fa-f] sẽ match với các kí hiệu mã hexa. 
 
-+ Kí tự đặc biệt mất đi ý nghĩa đặc biệt của chúng trong 1 bộ. Ví dụ [(+*)] sẽ match với các kí tự '(' ,'+' ,'*',')'
+       + Kí tự đặc biệt mất đi ý nghĩa đặc biệt của chúng trong 1 bộ. Ví dụ [(+*)] sẽ match với các kí tự '(' ,'+' ,'*',')'
 
-+ Các kí tự lớp như \w hay \s cũng được chấp nhận trong 1 set. mặc dù những kí tự này match phụ thuộc vào chế độ LOCALE hay UNICODE đang có hiệu lực
+       + Các kí tự lớp như \w hay \s cũng được chấp nhận trong 1 set. mặc dù những kí tự này match phụ thuộc vào chế độ LOCALE hay UNICODE đang có hiệu lực
 
-+ Các kí tự không ở trong phạm vi có thể được match bằng cách bổ sung cho tập. Nếu kí tự đầu tiên của 1 tập là '^' thì tất cả các kí tự không ở trong tập sẽ được match. Ví dụ [^5] sẽ mới các tất cả các kí tự ngoại trừ '5' và [^^] sẽ match với tất cả các kí tự ngaọi trừ '^'. 
+       + Các kí tự không ở trong phạm vi có thể được match bằng cách bổ sung cho tập. Nếu kí tự đầu tiên của 1 tập là '^' thì tất cả các kí tự không ở trong tập sẽ được match. Ví dụ [^5] sẽ mới các tất cả các kí tự ngoại trừ '5' và [^^] sẽ match với tất cả các kí tự ngaọi trừ '^'. 
 
-+ Để match với kí tự ']' bên trong 1 tập. sử dụng '\' hoặc đặt nó tại nơi bắt đầu của 1 tập. Ví dụ: cả [()[\]{}] và []()[{}] sẽ match với dấu ngoặc
+      + Để match với kí tự ']' bên trong 1 tập. sử dụng '\' hoặc đặt nó tại nơi bắt đầu của 1 tập. Ví dụ: cả [()[\]{}] và []()[{}] sẽ match với dấu ngoặc
 
 
 - '|' : A|B nơi mà A và B có thể được RE tùy ý. 1 RE sẽ match với cả A và B. để match kí tự '|' sử dụng '\' hoặc đặt cuối 1 tập ví dụ: [a|]
 
-(...) : Match RE bên trong dấu ngoặc. chỉ bắt đầu và kết thúc của 1 nhóm. Nội dung của nhóm có thể 
+- (...) : Match RE bên trong dấu ngoặc. chỉ bắt đầu và kết thúc của 1 nhóm. Nội dung của nhóm có thể 
 được lấy ra sau khi match đc thực hiện. 
 
-(?P<name>...): thuơng tự biểu thức ngoặc. nhưng substring match bởi group được truy cập thông qua biểu tượng tên group name. Group name phải được khai báo. và mỗi group phải được định nghĩa chỉ 1 lần với 1 RE.
+- (?P<name>...): thuơng tự biểu thức ngoặc. nhưng substring match bởi group được truy cập thông qua biểu tượng tên group name. Group name phải được khai báo. và mỗi group phải được định nghĩa chỉ 1 lần với 1 RE.
 
 Xét ví dụ sau
 
