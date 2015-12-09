@@ -115,3 +115,85 @@ Number: 12421
 - \W ngược lại \w
 
 - \Z chỉ match khi kết thúc của string
+
+
+
+###Các hàm
+###1.re.compile(pattern, flags=0)
+
+```
+
+prog = re.compile(pattern)
+result = prog.match(string)
+
+
+```
+tuơng đương với 
+
+```
+result = re.match(pattern, string)
+```
+
+
+re.DEBUG
+
+re.I
+re.IGNORECASE
+
+re.L
+re.LOCALE
+
+re.M
+re.MULTILINE
+
+re.S
+re.DOTALL
+
+re.X
+re.VERBOSE
+
+2 RE dưới dây giống nhau
+
+```
+a = re.compile(r"""\d +  # the integral part
+                   \.    # the decimal point
+                   \d *  # some fractional digits""", re.X)
+
+b = re.compile(r"\d+\.\d*")
+```
+
+###2.re.search(pattern, string, flags=0)
+
+###3.re.match(pattern, string, flags=0)
+
+
+###4.re.split(pattern, string, maxsplit=0, flags=0)
+
+Cắt string bằng sự xuất hiện của pattern. 
+
+```
+>>> re.split('\W+', 'Words, words, words.')
+['Words', 'words', 'words', '']
+>>> re.split('(\W+)', 'Words, words, words.')
+['Words', ', ', 'words', ', ', 'words', '.', '']
+>>> re.split('\W+', 'Words, words, words.', 1)
+['Words', 'words, words.']
+>>> re.split('[a-f]+', '0a3B9', flags=re.IGNORECASE)
+['0', '3', '9']
+
+```
+
+###5.re.findall(pattern, string, flags=0)
+
+###6.re.finditer(pattern, string, flags=0)¶
+
+###7.re.sub(pattern, repl, string, count=0, flags=0)
+
+###8.re.subn(pattern, repl, string, count=0, flags=0)
+
+tuong tu re.sub() nhung tra ve 1 tuple
+
+###9. re.escape(string)
+
+###10. re.purge()
+clear cache
