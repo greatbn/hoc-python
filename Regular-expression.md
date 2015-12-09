@@ -15,7 +15,7 @@
 - '?': gây ra kết quả match với cả số lần lặp 0 và 1. Ví dụ: 'ab?' sẽ match với cả 'a' và 'ab'
 
 - '*?' , '+?','??': Match với nhiều text. Ví dụ
-<.*> sẽ match với <h1>title</h1>. <.*?> sẽ chỉ match với <h1> và </h1>
+` <.*> sẽ match với <h1>title</h1>. <.*?> sẽ chỉ match với <h1> và </h1>`
 
 - '{m}' : Chỉ định rằng chính xác m bản RE trước đó nên được match. Ví dụ a{6} sẽ match chính xác 6 kí tự 'a' ko phải 5
 
