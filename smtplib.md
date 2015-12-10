@@ -15,7 +15,7 @@ mail_server = 'smtp.gmail.com'
 mail_server_port = 587
 
 # khai bao noi dung mail 
-body = 'python send email through gmail'
+body = 'python send email through gmail' # noi dung mail
 msg = MIMEText(body)
 msg['Subject'] = "Test Email" # Tieu de thu
 msg['From'] = from_addr  #Nguoi gui
