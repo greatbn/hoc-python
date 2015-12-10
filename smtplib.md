@@ -36,3 +36,7 @@ if __name__=="__main__":
 	send()
 
 ```
+
+###su dung:
+
+`python send_mail.py send@gmail.com password_send receive@example.com`
