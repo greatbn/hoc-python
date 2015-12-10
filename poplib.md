@@ -16,3 +16,32 @@ p.pass_(password)
 ```
 Server mail google: pop.googlemail.com:995
 ```
+
+
+poplib ho tro cac method sau
+
+- `apop`
+- `buffer`
+- `certfile`
+- `dele`
+- `file`
+- `getwelcome`
+- `host`
+- `keyfile`
+- `list`
+- `noop`
+- `pass_`
+- `port`
+- `quit`
+- `retr`
+- `rpop`
+- `rset`
+- `set_debuglevel`
+- `sock`
+- `sslobj`
+- `stat`
+- `timestamp`
+- `top`
+- `uidl`
+- `user`
+- `welcome`
