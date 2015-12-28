@@ -50,6 +50,7 @@ def show_post(post_id):
 	- int
 	- float
 	- path
+
 ###HTTP Method
 
 - Khai báo các http method tại route()
@@ -61,6 +62,7 @@ def login():
 	else:
 		show_the_profile()
 ```
+
 ###Rendering Template
 
 - Để render một template bạn có thể sử dụng phương thức render_template(). Tất cả bạn phải làm là cung cấp tên của template và các biến để pass tới template engine. Các ví dụ.
