@@ -64,7 +64,7 @@ def login():
 ```
 
 ###Rendering Template
-
+s
 - Để render một template bạn có thể sử dụng phương thức render_template(). Tất cả bạn phải làm là cung cấp tên của template và các biến để pass tới template engine. Các ví dụ.
 
 ```
@@ -132,9 +132,12 @@ def internal_server_error(e):
 
 ###Accessing request data
 
+
 ```
 app.config.from_object(__name__)
 app.config.from_envvar('FLASKR_SETTING',silent = True)
+app.config['USERNAME']
+
 ```
 ###Request Database connection
 
@@ -155,6 +158,6 @@ def teardown_request(exception):
 
 - Function before_request() được gọi trước một request không có tham số nào truyền vào. Function after_request() được gọi sau một request và có một response mà sẽ được gửi tới client. Chúng phải trả vè response object hoặc một cái khác. Tuy nhiên chúng không đảm bảo được thực thi khi có một ngoại lệ, và đó là nơi mà function teardown_request() đến. CHúng được gọi sau khi response được xây dựng. Chúng không được cho phép để sửa request và chúng trả về giá trị bị bỏ qua. Nếu một ngoại lệ xảy ra khi một request được xử lý, nó được pass tới mỗi function mặt khác None sẽ được pass. 
 
-Chúng ta lưu kết nối database hiện thời trong object đặc biệt là 'g' nó đc Flask cung cấp cho chúng ta. Object này lưu trữ thông tin chỉ một request và sẵn có từ bên trong mỗi function. Không bao giờ lưu trữ những thứ như vậy trên các đối tượng khác vì điều này sẽ không làm việc với môi trường thread.
+- Chúng ta lưu kết nối database hiện thời trong object đặc biệt là 'g' nó đc Flask cung cấp cho chúng ta. Object này lưu trữ thông tin chỉ một request và sẵn có từ bên trong mỗi function. Không bao giờ lưu trữ những thứ như vậy trên các đối tượng khác vì điều này sẽ không làm việc với môi trường thread.
 
 	
