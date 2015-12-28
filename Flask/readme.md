@@ -156,8 +156,11 @@ def teardown_request(exception):
 ```
 
 
-- Function before_request() được gọi trước một request không có tham số nào truyền vào. Function after_request() được gọi sau một request và có một response mà sẽ được gửi tới client. Chúng phải trả vè response object hoặc một cái khác. Tuy nhiên chúng không đảm bảo được thực thi khi có một ngoại lệ, và đó là nơi mà function teardown_request() đến. CHúng được gọi sau khi response được xây dựng. Chúng không được cho phép để sửa request và chúng trả về giá trị bị bỏ qua. Nếu một ngoại lệ xảy ra khi một request được xử lý, nó được pass tới mỗi function mặt khác None sẽ được pass. 
+- Function before_request() được gọi trước một request không có tham số nào truyền vào. 
+- Function after_request() được gọi sau một request và có một response mà sẽ được gửi tới client. 
+- Nếu có ngoại lện function teardown_request() được sử dụng. 
+- Ví dụ một website cần kết nối đến database nhiều lần. Để không phải viết nhiều lần code thì ta sẽ sử dụng before_request() , after_request() hoặc teardown_request(). 
 
-- Chúng ta lưu kết nối database hiện thời trong object đặc biệt là 'g' nó đc Flask cung cấp cho chúng ta. Object này lưu trữ thông tin chỉ một request và sẵn có từ bên trong mỗi function. Không bao giờ lưu trữ những thứ như vậy trên các đối tượng khác vì điều này sẽ không làm việc với môi trường thread.
+- Chúng ta lưu kết nối database hiện thời trong object đặc biệt là 'g' nó đc Flask cung cấp cho chúng ta. Object này như một bộ lưu trữ tạm thời. Nó sẽ được xóa sau mỗi request.
 
 	
