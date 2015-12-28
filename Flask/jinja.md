@@ -124,3 +124,83 @@ Bootstrap(app)
 {% extends "bootstrap/base.html" %}
 ```
 
+- Ví dụ về cách sử dụng bootstrap
+- ứng dụng đơn giản hiển thị user-agent của trình duyệt
+- Thư mục
+
+```
+--user-agent/
+------------app.py
+------------templates/
+---------------------base.html
+---------------------index.html
+
+```
+
+####Code
+
+- app.py
+```
+from flask import Flask,request,make_response,redirect,render_template,url_for
+from flask.ext.bootstrap import Bootstrap
+
+app = Flask(__name__)
+Bootstrap(app)
+@app.route("/")
+def index():
+	user_agent= request.headers.get('User-Agent')
+	return render_template("index.html",user_agent = user_agent)
+if __name__ == '__main__':
+	app.run(debug=True)
+
+```
+
+- base.html
+```
+
+{% extends "bootstrap/base.html" %}
+{% block title %} Hello Flask {% endblock %}
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle"
+data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/">Flasky</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li><a href="/">Home</a></li>
+</ul>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+{% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+```
+
+- index.html
+
+```
+{% extends "base.html" %}
+{% block title %} Hello {% endblock %}
+{% block page_content %}
+<h1> Hello </h1>
+<h4> Your browser is {{ user_agent }}</h4>
+{% endblock %}
+
+```
+
+- Chạy ứng dụng mở trình duyệt tại địa chỉ  http://localhost:5000
+
+<img src="http://i.imgur.com/q2ZQ0IJ.png">
