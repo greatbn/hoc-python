@@ -118,7 +118,7 @@ Bootstrap(app)
 
 ```
 
-- Từ đây các file template có thể kế thừa base của bootstrap bằng cách
+-Từ đây các file template có thể kế thừa base của bootstrap bằng cách
 
 ```
 {% extends "bootstrap/base.html" %}
